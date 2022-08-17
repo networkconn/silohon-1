@@ -1,0 +1,342 @@
+/* ================================
+* Theme Name: Silohon
+* Version: 2.3.1
+* Description: Silohon is Fast load Wordpress Theme for blog, Megazine, and more. This is template is Support lazyload for Google Adsense, Lazyload Image, and more..
+* Author: Nur Akbar
+* Author URI: https://github.com/silohon
+* Tags: Fast Load, Lazy Load, Responsive, Grid Theme
+* Text Domain: silohon
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+* =================================*/
+@font-face {
+    font-family: 'Anton';
+    src: url('fonts/anton.woff2') format('woff2'), url('fonts/anton.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/oswald.woff2') format('woff2'), url('fonts/oswald.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pt Serif';
+    src: url('fonts/ptserif.woff2') format('woff2'), url('fonts/ptserif.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+:root{
+    --link:#000;--hover:#1dad30;--bl1:#313131;
+    --bl2:#444444;--bl3:#535353;--bl4:#636363;
+    --bl5:#727272;--pt1:#fff;--pt2:#f3f3f3;--pt3:#e0dddd;
+    --pt4:#cecbcb;--pt5:#b9b9b9;
+}
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: 'Pt Serif';
+    background-color: var(--pt1);
+    scroll-snap-type: none;
+}
+.container{
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+a{
+    color: var(--link);
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+ul,li{
+    list-style: none;
+}
+.flex100{
+    transform: translate(-105%);
+}
+.f-moba{
+    display: none;
+}
+/* ===================================
+* Header Style =======================
+====================================== */
+.silo_header{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--pt1);
+    padding: 10px 0;
+    box-shadow: 10px 10px 10px var(--bl5);
+}
+.headers{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-top: 10px;
+}
+/* Header Left and Right */
+.header_left{
+    cursor: pointer;
+    transition: all .5s;
+}
+.header_left:hover span{
+    background-color: var(--hover);
+}
+.header_left span{
+    width: 100%;
+    background-color: var(--link);
+    height: 3px;
+    border-radius: 10px;
+    margin: 3px 0;
+}
+.header_left span:nth-child(2){
+    width: 33px;
+}
+.header_left span:nth-child(3){
+    width: 28px;
+}
+.header_left, .header_right{
+    box-sizing: border-box;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Mid */
+.header_mid{
+    width: calc(100% - 80px);
+    box-sizing: border-box;
+    text-align: center;
+}
+.header_mid a .silo_logo{
+    width: auto;
+    height: 60px;
+    margin-bottom: 10px;
+}
+.big_menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Anton';
+    margin-top: 5px;
+    font-size: 15px;
+    transition: all .5s;
+    text-transform: uppercase;
+}
+.big_menu li{
+    margin: 0 5px;
+}
+.big_menu li:hover a{
+    color: var(--hover);
+}
+.big_menu .current-menu-item a{
+    color: var(--hover);
+    text-decoration: underline 3px var(--hover);
+}
+
+/* Flexbox Menu Style */
+.silo_flex{
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    width: 450px;
+    padding: 40px 30px;
+    background-color: var(--pt1);
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: all .5s;
+}
+.silo_flex .flex_top{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 30px;
+    margin-top: 20px;
+}
+.flex_top a .flex_title{
+    font-size: 20px;
+    font-family: 'Anton';
+    letter-spacing: 1px;
+}
+.flex_top .flex_close{
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.flex_top .flex_close:hover span{
+    background-color: var(--hover);
+}
+.flex_top .flex_close span{
+    background-color: var(--link);
+    height: 3px;
+    border-radius: 10px;
+}
+.flex_close span:nth-child(1){
+    transform: rotate(-45deg);
+    transform-origin: 80% 90%;
+    
+}
+.flex_close span:nth-child(2){
+    transform: rotate(45deg);
+    transform-origin: 35% 160%;
+}
+.silo_flex .menu_flex{
+    list-style: none;
+    margin-top: 25px;
+    font-family: 'Oswald';
+    box-sizing: border-box;
+}
+.silo_flex .menu_flex li{
+    margin: 10px 0;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--link);
+    width: max-content;
+}
+.silo_flex .menu_flex .current-menu-item a{
+    color: var(--hover);
+}
+.silo_flex .menu_flex li a:hover{
+    color: var(--hover);
+}
+
+/* ===================================
+* Footer Style =======================
+====================================== */
+footer{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 60px;
+}
+.footop{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--bl5);
+    padding: 20px 0;
+    text-align: center;
+}
+.silo_foot_menu{
+    display: flex;
+    justify-content: center;
+    font-family: 'Oswald';
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.silo_foot_menu li{
+    margin: 0 5px;
+}
+.silo_foot_menu li a{
+    color: var(--pt1);
+}
+.foobot{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    background-color: var(--bl1);
+}
+.silo_foobot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Oswald';
+    font-size: 13px;
+}
+.silo_foobot .fooleft,
+.silo_foobot .fooright{
+    color: var(--pt1);
+}
+.silo_foobot .fooleft a,
+.silo_foobot .fooright a{
+    color: var(--pt2);
+}
+.silo_foobot a:hover{
+    color: var(--hover);
+}
+
+/* Media Queries For tablet */
+@media(max-width:780px){
+    .container{
+        padding: 0 20px;
+    }
+    .f-moba{
+        display: inherit;
+    }
+    /* ===================================
+    * Header Style =======================
+    ====================================== */
+    /* Header Mid */
+    .header_mid a .silo_logo{
+        height: 50px;
+        margin-bottom: -5px;
+    }
+    .big_menu{
+        display: none;
+    }
+    /* ===================================
+    * Footer Style =======================
+    ====================================== */
+    .footop{
+        display: none;
+    }
+}
+@media(max-width:580px){
+    /* ===================================
+    * Header Style =======================
+    ====================================== */
+    /* Header Left and Right */
+    .header_left span:nth-child(2){
+        width: 30px;
+    }
+    .header_left span:nth-child(3){
+        width: 25px;
+    }
+    .header_left, .header_right{
+        width: 35px;
+    }
+    
+    /* Header Mid */
+    .header_mid a .silo_logo{
+        height: 40px;
+        margin-bottom: -10px;
+    }
+    /* Flexbox Menu Style */
+    .silo_flex{
+        width: 100%;
+        padding: 20px;
+    }
+    .silo_flex .flex_top{
+        margin-top: 10px;
+    }
+    /* ===================================
+    * Footer Style =======================
+    ====================================== */
+    .silo_foobot{
+        justify-content: center;
+    }
+    .silo_foobot .fooright{
+        display: none;
+    }
+}
