@@ -30,6 +30,12 @@ function silo_admin(){
         function custom_color(){
             get_template_part( 'admin/settings/color', 'setting' );
         }
+
+    // Action Admin init
+    add_action('admin_init', 'silo_admin_init');
+    function silo_admin_init(){
+        require SILO_DIR . '/admin/options/general.php';
+    }
 }
 
 /**======================================

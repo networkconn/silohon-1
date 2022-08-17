@@ -15,6 +15,10 @@
             </div>
         </div>
     </footer>
+    <?php if(get_option('silo_backtop')==''
+        || get_option('silo_backtop')=='true') :
+        get_template_part('template/aside/backtop');
+        endif; ?>
     <?php wp_footer(); ?>
 </body>
 </html>
