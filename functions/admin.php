@@ -15,26 +15,17 @@ function silo_admin(){
         }
     add_submenu_page( 'silo_general', 'General Settings',
         'General Settings', 'manage_options', 'silo_general', 'silo_general' );
-    add_submenu_page( 'silo_general', 'Front Page',
-        'Front Page', 'manage_options', 'front_page', 'front_page' );
-        function front_page(){
-            get_template_part( 'admin/settings/front', 'setting' );
-        }
-    add_submenu_page( 'silo_general', 'Post Setting',
-        'Post Setting', 'manage_options', 'post_setting', 'post_setting' );
+    add_submenu_page( 'silo_general', 'Single Post',
+        'Single Post', 'manage_options', 'post_setting', 'post_setting' );
         function post_setting(){
             get_template_part( 'admin/settings/post', 'setting' );
-        }
-    add_submenu_page( 'silo_general', 'Custom Color',
-        'Custom Color', 'manage_options', 'custom_color', 'custom_color' );
-        function custom_color(){
-            get_template_part( 'admin/settings/color', 'setting' );
         }
 
     // Action Admin init
     add_action('admin_init', 'silo_admin_init');
     function silo_admin_init(){
         require SILO_DIR . '/admin/options/general.php';
+        require SILO_DIR . '/admin/options/post.php';
     }
 }
 

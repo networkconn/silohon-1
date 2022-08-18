@@ -1,7 +1,7 @@
 <?php /**
- * Page Silohon Theme
+ * Front page Silohon Theme.
  * @package silohon */ get_header(); ?>
 
-<h1>ini adalah page</h1>
+<h1>Front Page</h1>
 
 <?php get_footer(); ?>
