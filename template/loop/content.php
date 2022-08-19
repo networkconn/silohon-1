@@ -12,9 +12,9 @@
                 <a href="<?php the_permalink(); ?>" rel="bookmark" class="loop_link">
                     <img width="150" height="150" src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                     <div class="loop_body">
-                        <span class="metas"></span>
-                        <span class="metas"></span>
-                        <span class="metas"></span>
+                        <span class="metas"><?php silo_cats(); ?></span>
+                        <span class="metas">/</span>
+                        <span class="metas"><?php the_time('F d, Y'); ?></span>
                         <?php the_title('<h2 class="post_title">', '</h2>'); ?>
                         <?php the_excerpt(); ?>
                     </div>
