@@ -39,6 +39,9 @@ function silo_sidebar(){
         'id' => 'single',
         'name' => esc_html__( 'Single Post sidebar', 'silohon' ),
     ) );
+
+    register_widget( 'Silo_Search' );
+    register_widget( 'Silo_Recent_post' );
 }
 
 /**=====================================

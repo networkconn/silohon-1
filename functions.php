@@ -11,3 +11,4 @@ define('SILO_URI', get_template_directory_uri());
 require SILO_DIR . '/functions/admin.php';
 require SILO_DIR . '/functions/theme-support.php';
 require SILO_DIR . '/functions/theme-script.php';
+require SILO_DIR . '/functions/widgets.php';
