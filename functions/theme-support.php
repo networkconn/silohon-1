@@ -40,8 +40,15 @@ function silo_sidebar(){
         'name' => esc_html__( 'Single Post sidebar', 'silohon' ),
     ) );
 
+    // Archive Sidebar
+    register_sidebar( array(
+        'id' => 'archive',
+        'name' => esc_html__('Archive Sidebar', 'silohon' ),
+    ) );
+
     register_widget( 'Silo_Search' );
     register_widget( 'Silo_Recent_post' );
+    register_widget( 'Silo_Popular_Post' );
 }
 
 /**=====================================
@@ -62,6 +69,24 @@ function silo_cats(){
     endif;
     echo $output;
 }
+
+// The Category With Links
+function silo_cat__(){
+    $categories = get_the_category();
+    $sparator = ', ';
+    $output = '';
+    $i=1;
+    if( !empty($categories) ) :
+        foreach( $categories as $category ) :
+            if($i > 1 ) : $output .= $sparator; endif;
+            $output = '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( 'Post On%s', $category->name ) . '">' . esc_html( $category->name ) . '</a>';
+            $i++;
+        endforeach;
+    endif;
+    echo $output;
+}
+
+// The Tags Without Links
 
 /**=====================================
  * The Excerpt Length ==================

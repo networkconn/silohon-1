@@ -249,3 +249,23 @@ form.sil_search button{
     line-height: 20px;
     margin-top: 5px;
 }
+
+@media(max-width:780px){
+    /* Search Widgets */
+    .silo_sidebar{
+        margin-top: 20px;
+    }
+    /* Recent and Popular Posts */
+    .silo_recent_widgets{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+}
+
+@media(max-width:580px){
+    /* Recent and Popular Posts */
+    .silo_recent_widgets{
+        display: block;
+    }
+}
